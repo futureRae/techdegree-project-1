@@ -97,16 +97,22 @@ function changeBackgroundColor (){
   
 }
 
-// create a 
+// show a new quote every 1000 milliseconds 
 function autoUpdateQuote() {
   let intervalID = window.setInterval(printQuote, 1000);
   return intervalID; 
 }
 
+// show a new background color every 1000 milliseconds
+function autoUpdateBackgroundColor() {
+  let intervalID = window.setInterval(changeBackgroundColor, 1000);
+  return intervalID; 
+}
 
 // Call the printQuote function so there is something on the page by default
 printQuote(); 
 autoUpdateQuote();
+autoUpdateBackgroundColor();
 
 // Button triggers `printQuote` and changeBackgroundColor
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
